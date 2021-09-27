@@ -9,7 +9,7 @@ namespace AppRhh
     {
         StreamWriter registrotxt = File.AppendText("AppRhh.txt");
         
-        re
+        
         
     }
 }
