@@ -6,6 +6,14 @@ namespace AppRhh
 {
     public interface IEmpleado
     {
-        void Registrar();
+        string NombreEmpleado(string nombre);
+        string Departamento(string departamento);
+        string Cargo(string cargo);
+        int HorasPrecio();
+        int Precio();
+        int Salario();
+        long CuentaBancaria();
+        DateTime Fecha();
+       
     }
 }

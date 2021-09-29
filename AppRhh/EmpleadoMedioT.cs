@@ -6,45 +6,52 @@ namespace AppRhh
 {
     class EmpleadoMedioT : IEmpleado
     {
-        public void Registrar()
+         private int HorasTrabajadas = 4;
+         private int PrecioHoras= 8;
+        public string NombreEmpleado(string nombre)
         {
-            String NombreEmpleado;
-            String DepartamentoE;
-            String CargoEmpleado;
-            int CuentaBancaria;
-            int HorasTrabajadas;
-            int PrecioHoras;
-
             //Pedimos los datos de nuestro empleado
-            Console.WriteLine("");
-            Console.WriteLine("Ingrese el nombre del empleado: ");
-            NombreEmpleado = Console.ReadLine();
 
+
+            return nombre;
+        }
+        public string Departamento(string departamento)
+        {          
             //Pedimos su departamento
-            Console.WriteLine("");
-            Console.WriteLine("Ingrese su departamento: ");
 
-            DepartamentoE = Console.ReadLine();
-
+            return departamento;
+        }
+        public string Cargo(string cargo)
+        {
             //Pedimos su cargo 
-            Console.WriteLine("");
-            Console.WriteLine("Ingrese su cargo: ");
 
-            CargoEmpleado = Console.ReadLine();
-
-            //Pedimos las horas trabajadas del empleado
-            Console.WriteLine("");
-            Console.WriteLine("Ingrese las horas trabajadas del empleado: ");
-
+            return cargo;
+        }
+        public int HorasPrecio()
+        {
             HorasTrabajadas = int.Parse(Console.ReadLine());
-
+            return HorasTrabajadas;
+        }
+        public int Precio()
+        {
             //Pedimos el precio de las horas
-            Console.WriteLine("");
-            Console.WriteLine("Ingrese cuanto cobra por hora: ");
-
             PrecioHoras = int.Parse(Console.ReadLine());
 
+            return PrecioHoras;
+        }
+
+        public int Salario()
+        {
+            int Salario = HorasTrabajadas * PrecioHoras * (23);
+            Console.Write(Salario);
+            Salario.ToString();
+
+            return Salario;
+        }
+        public long CuentaBancaria()
+        {
             // Como este usuario es un empleado de medio tiempo requiere cuenta bancaria y la solicitamos
+            int CuentaBancaria = 0;
             Console.WriteLine("");
             Console.WriteLine("El metodo de pago es: ");
             Console.WriteLine("");
@@ -54,18 +61,18 @@ namespace AppRhh
 
             CuentaBancaria = int.Parse(Console.ReadLine());
 
-
-            //Capturamos el salario
-
-            int Salario = HorasTrabajadas * PrecioHoras;
-
-            Console.WriteLine("");
-            Console.WriteLine(DateTime.Now);
-
-
-            Console.WriteLine("");
-            Console.WriteLine("EL EMPLEADO SE HA REGISTRADO CORRECTAMENTE!!!");
+            return CuentaBancaria;
         }
+        public DateTime Fecha()
+        {
+            Console.WriteLine("");
+            DateTime Fecha = DateTime.Now;
+
+            
+
+            return Fecha;
+        }
+   
     }
 }
 
