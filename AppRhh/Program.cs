@@ -23,6 +23,7 @@ namespace AppRhh
                 Console.WriteLine("*********************************************");
                 Console.WriteLine("");
                 Console.WriteLine("Elija una de las 3 opciones de registro de empleados");
+                Console.WriteLine("");
                 Console.WriteLine("1. Empleado tiempo completo");
                 Console.WriteLine("2. Empleado medio tiempo");
                 Console.WriteLine("3. Empleado temporaneo");
@@ -37,6 +38,7 @@ namespace AppRhh
 
                 if (seleccion >= 1 && seleccion <= 3)
                 {
+                    Console.WriteLine("");
                     empleado = Registro.RegistrarEmpleados(seleccion);
                     Console.WriteLine("");
                     Console.Write("Ingrese el nombre del empleado: ");
@@ -105,16 +107,21 @@ namespace AppRhh
 
                 else if (seleccion == 4)
                 {
+                    Console.WriteLine("");
                     fachada.OpVacaciones();
                 }
                 else if (seleccion == 5)
                 {
+                    Console.WriteLine("");
                     fachada.OpPermisos();
                 }
                 else if (seleccion == 6)
                 {
+                    Console.WriteLine("");
                     fachada.OpDesvinculacion();
                 }
+                
+
 
 
             } while (seleccion == 1 || seleccion == 2 || seleccion == 3 || seleccion == 4 || seleccion == 5 || seleccion == 6);

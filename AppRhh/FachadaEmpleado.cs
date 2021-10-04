@@ -6,26 +6,25 @@ namespace AppRhh
 {
     class FachadaEmpleado
     {
-        private Vacaciones vacacionEmpleado;
+        private VacacionesE vacacionEmpleado;
         private Permiso permisoEmpleado;
         private Desvinculacion desvinculacionEmpleado;
 
 
         public void OpVacaciones()
         {
-            vacacionEmpleado = new Vacaciones();
+            vacacionEmpleado = new VacacionesE();
             Console.WriteLine("Digite su cedula: ");
             vacacionEmpleado.CedulaVaciones();
             Console.WriteLine("");
-            Console.WriteLine("Escriba la fecha de inicio de sus vacaciones: ");
+            Console.Write("Escriba la fecha de inicio de sus vacaciones: ");
             vacacionEmpleado.FechaInicio();
             Console.WriteLine("");
-            Console.WriteLine("Escriba la fecha de termino de las vacaciones: ");
-            vacacionEmpleado.FechaInicio();
+            Console.Write("Escriba la fecha de termino de las vacaciones: ");
+            vacacionEmpleado.FechaSalida();
             Console.WriteLine("");
             Console.Write("Los dias de vacaciones que posee son: ");
             vacacionEmpleado.VacacionesDias();
-            Console.WriteLine(vacacionEmpleado.VacacionesDias());
             Console.WriteLine("");
             Console.WriteLine("");
 

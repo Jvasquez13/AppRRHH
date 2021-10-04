@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 
-
 namespace AppRhh
 {
-    class Vacaciones
+    class VacacionesE
     {
         private string cedula { get; set; }
         private DateTime fechaInicio;
         private DateTime fechaSalida;
+        private TimeSpan restaFechas;
+        private int diasVacaciones;
 
         public string CedulaVaciones()
         {
@@ -19,30 +20,28 @@ namespace AppRhh
         }
         public DateTime FechaInicio()
         {
-            fechaInicio = Convert.ToDateTime(Console.ReadLine());
-      
+            fechaInicio = DateTime.Parse(Console.ReadLine());
 
             return fechaInicio;
         }
         public DateTime FechaSalida()
         {
-            
-            fechaSalida = Convert.ToDateTime(Console.ReadLine());
- 
+
+            fechaSalida = DateTime.Parse(Console.ReadLine());
 
             return fechaSalida;
-       
-        }
 
+        }
         public int VacacionesDias()
         {
+            restaFechas = fechaSalida - fechaInicio;
+            diasVacaciones = restaFechas.Days;
+            Console.WriteLine(diasVacaciones);
+
+            return diasVacaciones;
             
-            int dias = (fechaSalida - fechaInicio).Days;
-
-            return dias;
         }
-       
     }
-
-    
 }
+
+
