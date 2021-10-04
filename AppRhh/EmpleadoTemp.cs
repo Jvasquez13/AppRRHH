@@ -72,6 +72,11 @@ namespace AppRhh
                 return Fecha;
 
         }
+
+        public string cedulaEmpleado(string cedula)
+        {
+            return cedula;
+        }
         //Este usuario no necesita cuenta bancaria ya que es temporario y paga por cheque.
     }
 }

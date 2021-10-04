@@ -14,6 +14,6 @@ namespace AppRhh
         int Salario();
         long CuentaBancaria();
         DateTime Fecha();
-       
+        string cedulaEmpleado(string cedula);
     }
 }

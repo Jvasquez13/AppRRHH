@@ -21,12 +21,16 @@ namespace AppRhh
                 Console.WriteLine("Usted ha seleccionado la opcion Empleado a medio tiempo.");
                 return new EmpleadoMedioT();
             }
-            else         //La 3ra es el empleado a temporeo.
+            else if (TipoDeEmpleado == 3)       //La 3ra es el empleado a temporeo.
             {
                 Console.WriteLine("Usted ha seleccionado la opcion Empleado temporero.");
                 return new EmpleadoTemp();
             }
-         
+
+            else
+            {
+                return null;
+            }
             
         }
     }

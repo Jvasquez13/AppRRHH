@@ -77,11 +77,14 @@ namespace AppRhh
             return Fecha;
         }
 
-        public void Methof()
+
+        public string cedulaEmpleado(string cedula)
         {
-            throw new System.NotImplementedException();
+            return cedula;
+        }
+
         }
     }
 
-}
+
 

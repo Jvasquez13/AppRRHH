@@ -7,7 +7,7 @@ namespace AppRhh
     class EmpleadoMedioT : IEmpleado
     {
          private int HorasTrabajadas = 4;
-         private int PrecioHoras= 8;
+         private int PrecioHoras;
         public string NombreEmpleado(string nombre)
         {
             //Pedimos los datos de nuestro empleado
@@ -72,7 +72,11 @@ namespace AppRhh
 
             return Fecha;
         }
-   
+
+        public string cedulaEmpleado(string cedula)
+        {
+            return cedula;
+        }
     }
 }
 
