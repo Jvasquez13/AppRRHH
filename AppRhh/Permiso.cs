@@ -6,14 +6,8 @@ namespace AppRhh
 {
     class Permiso
     {
-        private string cedula { get; set; }
         private DateTime fechaPermiso;
-        public string CedulaPermiso()
-        {
-            cedula = Console.ReadLine();
-
-            return cedula;
-        }
+      
 
         public DateTime FechaPermiso()
         {

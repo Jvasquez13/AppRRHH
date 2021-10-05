@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 
@@ -6,17 +7,18 @@ namespace AppRhh
 {
     class Cliente
     {
-
+        
         static void Main(string[] args)
-   
+        
         {
+            List<EmpleadoLista> listaEmpleados = new List<EmpleadoLista>();
             FachadaEmpleado fachada = new FachadaEmpleado();
             int seleccion;
 
             do
             {
 
-
+                #region CONSOLA
                 IEmpleado empleado;
                 Console.WriteLine("*********************************************");
                 Console.WriteLine("*Bienvenido a la app de RRHH de personal*");
@@ -35,9 +37,12 @@ namespace AppRhh
 
                 
                 seleccion = int.Parse(Console.ReadLine());
+                #endregion
+
 
                 if (seleccion >= 1 && seleccion <= 3)
                 {
+                    #region DATOS_EMPLEADO
                     Console.WriteLine("");
                     empleado = Registro.RegistrarEmpleados(seleccion);
                     Console.WriteLine("");
@@ -92,42 +97,73 @@ namespace AppRhh
 
                     Console.Write("Salario: ");
 
-                    empleado.Fecha();
+                    #endregion
+
+                    #region LOG
+
+
+                    EmpleadoLista lista = new EmpleadoLista();
+                    lista.Nombre = nombre;
+                    lista.Cedula = cedula;
+                    lista.Departamento = departamento;
+                    lista.Cargo = cargo;
+
+                    listaEmpleados.Add(new EmpleadoLista
+                    {
+                        Nombre = lista.Nombre,
+                        Cedula = lista.Cedula,
+                        Departamento = lista.Departamento,
+                        Cargo = lista.Cargo,
+                        FechaCreacion = lista.FechaCreacion
+
+
+                    }); ;
 
                     LogSingleton LogDeTexto = new LogSingleton(@"C:\Users\ESTUDIANTE\source\repos\AppRhh\AppRhh\bin\Debug\netcoreapp3.1");
-                    LogDeTexto.Add("Nombre empleado: " + empleado.NombreEmpleado(nombre));
-                    LogDeTexto.Add("Cedula: " + empleado.cedulaEmpleado(cedula));
-                    LogDeTexto.Add("Departamento: " + empleado.Departamento(departamento));
-                    LogDeTexto.Add("Cargo " + empleado.Cargo(cargo));
+                    LogDeTexto.Add("Nombre empleado: " + nombre);
+                    LogDeTexto.Add("Cedula: " + cedula);
+                    LogDeTexto.Add("Departamento: " + departamento);
+                    LogDeTexto.Add("Cargo " + cargo);
                     LogDeTexto.Add("Salario: " + empleado.Salario().ToString());
+                    Console.WriteLine(empleado.Fecha());
                     LogDeTexto.Add(empleado.Fecha().ToString());
                     LogDeTexto.Add("");
                     LogDeTexto.Add("----------------------------------------");
+
+                    foreach (var dato in listaEmpleados)
+                    {
+                        Console.WriteLine(dato);
+                      
+                    }
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+                    #endregion
                 }
 
                 else if (seleccion == 4)
                 {
                     Console.WriteLine("");
-                    fachada.OpVacaciones();
+                    
+                    fachada.OpVacacionesEmpleado(listaEmpleados);
+                  
                 }
                 else if (seleccion == 5)
                 {
                     Console.WriteLine("");
-                    fachada.OpPermisos();
+                   
+                    fachada.OpPermisosEmpleado(listaEmpleados);             
                 }
                 else if (seleccion == 6)
                 {
-                    Console.WriteLine("");
-                    fachada.OpDesvinculacion();
+               
+                    fachada.OpDesvinculacionEmpleado(listaEmpleados);
+                    
                 }
-                
-
 
 
             } while (seleccion == 1 || seleccion == 2 || seleccion == 3 || seleccion == 4 || seleccion == 5 || seleccion == 6);
+   
 
-
-            
         }
     }
 }

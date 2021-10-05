@@ -6,15 +6,8 @@ namespace AppRhh
 {
     class Desvinculacion
     {
-        private string cedula { get; set; }
+       
         private string causaDesvinculacion;
-
-        public string CedulaDesvinculacion()
-        {
-            cedula = Console.ReadLine();
-
-            return cedula;
-        }
 
         public string CausaDesvinculacion()
         {
@@ -35,16 +28,9 @@ namespace AppRhh
                 Console.WriteLine("Empleado desvinculado: " +confirmacionDesvinculacion);
                 return confirmacionDesvinculacion;
             }
-            else if (seleccion == 2)
-            {
-
-                confirmacionDesvinculacion = false;
-                Console.WriteLine("Empleado devinculado: " + confirmacionDesvinculacion);
-                return confirmacionDesvinculacion;
-            }
             else
             {
-                Console.WriteLine("Error , elija una de las 2 opciones.");
+                Console.WriteLine("Error , elija presione el boton confirmar.");
                 return false;
             }
     
